@@ -1,0 +1,7 @@
+# Survey field polygon, in metres relative to the HOME position (east, north).
+# Convex polygon, vertices in order. This is a 120 m x 80 m field 30 m north-east of home.
+east_m,north_m
+30,30
+150,30
+150,110
+30,110

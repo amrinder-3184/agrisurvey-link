@@ -1,0 +1,9 @@
+build*/
+runs/
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+compile_commands.json
+*.AppImage
+*.deb
