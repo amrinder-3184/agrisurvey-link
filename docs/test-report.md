@@ -3,6 +3,9 @@
 All numbers come from runs in `runs/` produced by the commands shown. Simulation only:
 PX4 SITL (main @789389fd4, v1.18.0-beta) + Gazebo Harmonic, x500 quad, MAVSDK v4.1.0, WSL2 Ubuntu 24.04.
 
+Plots and an HTML summary for any run: `python3 analysis/report.py runs/<run> [--link <link_stats.csv>]`
+(output in `runs/<run>/report/`). Python tests: `python3 -m pytest analysis/tests -q` → **4/4 pass**.
+
 ## Unit tests
 `ctest` in `build/` and in `build-asan/` (AddressSanitizer + UBSan): **78/78 pass**, 0 compiler warnings
 (`-Wall -Wextra -Wpedantic -Wshadow -Wconversion`). 42 of these are the original spec tests.
