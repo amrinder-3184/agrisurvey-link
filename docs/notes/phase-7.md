@@ -13,7 +13,9 @@
 ## Verified
 - CI simulated locally: fresh `build-ci` with `-DCMAKE_DISABLE_FIND_PACKAGE_MAVSDK=ON
   -DCMAKE_COMPILE_WARNING_AS_ERROR=ON` → MAVSDK skipped, 0 warnings, 78/78 pass.
-  The real GitHub run shows after your push: `[TBD: check Actions tab]`.
+  GitHub Actions run 41512111908 (commit fe0e1cc): all 3 jobs green (C++ release, C++ asan-ubsan,
+  Python report incl. the runs/demo smoke test).
+  Note: pushing `.github/workflows/` needs a token with the `workflow` scope.
 - Demo `runs/demo`:
   - success, 152 captures, 0 drops
   - spacing mean 0.259 / p95 0.397 / max 0.508 m
