@@ -277,8 +277,11 @@ def make_report(run_dir, link_csv=None):
         markers = ({r["phase"]: float(r["t_s"]) for r in read_csv(markers_path)}
                    if markers_path.exists() else None)
         plot_link(link, out / "link.png", markers)
+        same_run = Path(link_csv).resolve().parent == run_dir.resolve()
+        origin = ("recorded by link_monitor during this flight" if same_run else
+                  "a separate link_monitor run, not recorded during this flight")
         images.append(("link.png", f"MAVLink frame rate and per-interval loss, from {link_csv} "
-                                   "(a separate link_monitor run, not recorded during this flight)"))
+                                   f"({origin})"))
         summary["link"]["source"] = str(link_csv)
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     write_html(out / "report.html", run_dir.name, summary, events, images)

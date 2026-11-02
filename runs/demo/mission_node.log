@@ -1,0 +1,323 @@
+Run folder: runs/demo-staging-20261102-132535/20261102-132602
+Waiting up to 60 s for health and home...
+Plan: 16 waypoints (8 lines), spacing 10.39 m, trigger distance 6.21 m, path 1191 m
+Uploading mission...
+Armed. Taking off to 30 m...
+mode Hold | item 0/0 | alt 0.0 m | captures 0
+mode Takeoff | item 0/16 | alt -0.0 m | captures 0
+mode Takeoff | item 0/16 | alt -0.0 m | captures 0
+mode Takeoff | item 0/16 | alt 0.0 m | captures 0
+mode Takeoff | item 0/16 | alt 0.0 m | captures 0
+mode Takeoff | item 0/16 | alt 0.2 m | captures 0
+mode Takeoff | item 0/16 | alt 1.2 m | captures 0
+mode Takeoff | item 0/16 | alt 2.4 m | captures 0
+mode Takeoff | item 0/16 | alt 3.6 m | captures 0
+mode Takeoff | item 0/16 | alt 5.0 m | captures 0
+mode Takeoff | item 0/16 | alt 6.4 m | captures 0
+mode Takeoff | item 0/16 | alt 7.9 m | captures 0
+mode Takeoff | item 0/16 | alt 9.4 m | captures 0
+mode Takeoff | item 0/16 | alt 11.1 m | captures 0
+mode Takeoff | item 0/16 | alt 13.9 m | captures 0
+mode Takeoff | item 0/16 | alt 16.8 m | captures 0
+mode Takeoff | item 0/16 | alt 19.8 m | captures 0
+mode Takeoff | item 0/16 | alt 22.7 m | captures 0
+mode Takeoff | item 0/16 | alt 25.3 m | captures 0
+mode Takeoff | item 0/16 | alt 27.1 m | captures 0
+mode Takeoff | item 0/16 | alt 28.2 m | captures 0
+Mission started (timeout 596 s)
+mode Takeoff | item 0/16 | alt 28.9 m | captures 0
+mode Mission | item 0/16 | alt 29.4 m | captures 0
+mode Mission | item 0/16 | alt 29.7 m | captures 0
+mode Mission | item 0/16 | alt 29.7 m | captures 0
+mode Mission | item 0/16 | alt 29.7 m | captures 0
+mode Mission | item 0/16 | alt 29.8 m | captures 0
+mode Mission | item 0/16 | alt 29.8 m | captures 0
+mode Mission | item 0/16 | alt 29.7 m | captures 0
+mode Mission | item 0/16 | alt 29.7 m | captures 0
+mode Mission | item 0/16 | alt 29.7 m | captures 0
+mode Mission | item 0/16 | alt 29.8 m | captures 0
+mode Mission | item 1/16 | alt 29.9 m | captures 1
+mode Mission | item 1/16 | alt 30.0 m | captures 1
+mode Mission | item 1/16 | alt 30.0 m | captures 1
+mode Mission | item 1/16 | alt 30.0 m | captures 2
+mode Mission | item 1/16 | alt 30.0 m | captures 3
+mode Mission | item 1/16 | alt 30.0 m | captures 4
+mode Mission | item 1/16 | alt 30.0 m | captures 5
+mode Mission | item 1/16 | alt 30.0 m | captures 5
+mode Mission | item 1/16 | alt 30.0 m | captures 6
+mode Mission | item 1/16 | alt 30.0 m | captures 7
+mode Mission | item 1/16 | alt 30.0 m | captures 8
+mode Mission | item 1/16 | alt 30.0 m | captures 8
+mode Mission | item 1/16 | alt 30.0 m | captures 9
+mode Mission | item 1/16 | alt 30.0 m | captures 10
+mode Mission | item 1/16 | alt 30.0 m | captures 11
+mode Mission | item 1/16 | alt 30.0 m | captures 11
+mode Mission | item 1/16 | alt 30.0 m | captures 12
+mode Mission | item 1/16 | alt 30.0 m | captures 13
+mode Mission | item 1/16 | alt 30.0 m | captures 14
+mode Mission | item 1/16 | alt 30.0 m | captures 15
+mode Mission | item 1/16 | alt 30.0 m | captures 15
+mode Mission | item 1/16 | alt 30.0 m | captures 16
+mode Mission | item 1/16 | alt 30.0 m | captures 17
+mode Mission | item 1/16 | alt 30.0 m | captures 18
+mode Mission | item 1/16 | alt 30.0 m | captures 18
+mode Mission | item 1/16 | alt 30.0 m | captures 19
+mode Mission | item 2/16 | alt 30.0 m | captures 19
+mode Mission | item 2/16 | alt 30.0 m | captures 19
+mode Mission | item 2/16 | alt 30.0 m | captures 19
+mode Mission | item 3/16 | alt 30.0 m | captures 20
+mode Mission | item 3/16 | alt 30.0 m | captures 20
+mode Mission | item 3/16 | alt 30.1 m | captures 20
+mode Mission | item 3/16 | alt 30.0 m | captures 21
+mode Mission | item 3/16 | alt 30.0 m | captures 22
+mode Mission | item 3/16 | alt 30.0 m | captures 22
+mode Mission | item 3/16 | alt 30.0 m | captures 23
+mode Mission | item 3/16 | alt 30.0 m | captures 24
+mode Mission | item 3/16 | alt 30.0 m | captures 25
+mode Mission | item 3/16 | alt 30.0 m | captures 25
+mode Mission | item 3/16 | alt 30.0 m | captures 26
+mode Mission | item 3/16 | alt 30.0 m | captures 27
+mode Mission | item 3/16 | alt 30.0 m | captures 28
+mode Mission | item 3/16 | alt 30.0 m | captures 28
+mode Mission | item 3/16 | alt 30.0 m | captures 29
+mode Mission | item 3/16 | alt 30.0 m | captures 30
+mode Mission | item 3/16 | alt 30.0 m | captures 31
+mode Mission | item 3/16 | alt 30.0 m | captures 31
+mode Mission | item 3/16 | alt 30.0 m | captures 32
+mode Mission | item 3/16 | alt 30.0 m | captures 33
+mode Mission | item 3/16 | alt 30.0 m | captures 34
+mode Mission | item 3/16 | alt 30.0 m | captures 35
+mode Mission | item 3/16 | alt 30.0 m | captures 35
+mode Mission | item 3/16 | alt 30.0 m | captures 36
+mode Mission | item 3/16 | alt 30.0 m | captures 37
+mode Mission | item 3/16 | alt 30.0 m | captures 37
+mode Mission | item 3/16 | alt 30.0 m | captures 38
+mode Mission | item 4/16 | alt 30.0 m | captures 38
+mode Mission | item 4/16 | alt 30.1 m | captures 38
+mode Mission | item 4/16 | alt 30.0 m | captures 38
+mode Mission | item 5/16 | alt 30.0 m | captures 39
+mode Mission | item 5/16 | alt 30.0 m | captures 39
+mode Mission | item 5/16 | alt 30.0 m | captures 39
+mode Mission | item 5/16 | alt 30.0 m | captures 40
+mode Mission | item 5/16 | alt 30.0 m | captures 41
+mode Mission | item 5/16 | alt 30.0 m | captures 42
+mode Mission | item 5/16 | alt 30.0 m | captures 42
+mode Mission | item 5/16 | alt 30.0 m | captures 43
+mode Mission | item 5/16 | alt 30.0 m | captures 44
+mode Mission | item 5/16 | alt 30.0 m | captures 45
+mode Mission | item 5/16 | alt 30.0 m | captures 45
+mode Mission | item 5/16 | alt 30.0 m | captures 46
+mode Mission | item 5/16 | alt 30.0 m | captures 47
+mode Mission | item 5/16 | alt 30.0 m | captures 48
+mode Mission | item 5/16 | alt 30.0 m | captures 49
+mode Mission | item 5/16 | alt 30.0 m | captures 49
+mode Mission | item 5/16 | alt 30.0 m | captures 50
+mode Mission | item 5/16 | alt 30.0 m | captures 51
+mode Mission | item 5/16 | alt 30.0 m | captures 52
+mode Mission | item 5/16 | alt 30.0 m | captures 52
+mode Mission | item 5/16 | alt 30.0 m | captures 53
+mode Mission | item 5/16 | alt 30.0 m | captures 54
+mode Mission | item 5/16 | alt 30.0 m | captures 55
+mode Mission | item 5/16 | alt 30.0 m | captures 55
+mode Mission | item 5/16 | alt 30.0 m | captures 56
+mode Mission | item 5/16 | alt 30.0 m | captures 57
+mode Mission | item 6/16 | alt 30.0 m | captures 57
+mode Mission | item 6/16 | alt 30.0 m | captures 57
+mode Mission | item 6/16 | alt 30.0 m | captures 57
+mode Mission | item 7/16 | alt 30.0 m | captures 58
+mode Mission | item 7/16 | alt 30.0 m | captures 58
+mode Mission | item 7/16 | alt 30.0 m | captures 58
+mode Mission | item 7/16 | alt 30.0 m | captures 59
+mode Mission | item 7/16 | alt 30.0 m | captures 60
+mode Mission | item 7/16 | alt 30.0 m | captures 60
+mode Mission | item 7/16 | alt 30.0 m | captures 61
+mode Mission | item 7/16 | alt 30.0 m | captures 62
+mode Mission | item 7/16 | alt 30.0 m | captures 63
+mode Mission | item 7/16 | alt 30.0 m | captures 63
+mode Mission | item 7/16 | alt 30.0 m | captures 64
+mode Mission | item 7/16 | alt 30.0 m | captures 65
+mode Mission | item 7/16 | alt 30.0 m | captures 66
+mode Mission | item 7/16 | alt 30.0 m | captures 66
+mode Mission | item 7/16 | alt 30.0 m | captures 67
+mode Mission | item 7/16 | alt 30.0 m | captures 68
+mode Mission | item 7/16 | alt 30.0 m | captures 69
+mode Mission | item 7/16 | alt 30.0 m | captures 70
+mode Mission | item 7/16 | alt 29.9 m | captures 70
+mode Mission | item 7/16 | alt 29.9 m | captures 71
+mode Mission | item 7/16 | alt 29.9 m | captures 72
+mode Mission | item 7/16 | alt 29.9 m | captures 73
+mode Mission | item 7/16 | alt 29.9 m | captures 73
+mode Mission | item 7/16 | alt 29.9 m | captures 74
+mode Mission | item 7/16 | alt 29.9 m | captures 75
+mode Mission | item 7/16 | alt 30.0 m | captures 75
+mode Mission | item 8/16 | alt 30.0 m | captures 76
+mode Mission | item 8/16 | alt 30.0 m | captures 76
+mode Mission | item 8/16 | alt 30.0 m | captures 76
+mode Mission | item 8/16 | alt 30.0 m | captures 76
+mode Mission | item 9/16 | alt 30.0 m | captures 77
+mode Mission | item 9/16 | alt 30.0 m | captures 77
+mode Mission | item 9/16 | alt 30.0 m | captures 78
+mode Mission | item 9/16 | alt 30.0 m | captures 78
+mode Mission | item 9/16 | alt 30.0 m | captures 79
+mode Mission | item 9/16 | alt 30.0 m | captures 80
+mode Mission | item 9/16 | alt 30.0 m | captures 81
+mode Mission | item 9/16 | alt 30.0 m | captures 81
+mode Mission | item 9/16 | alt 29.9 m | captures 82
+mode Mission | item 9/16 | alt 29.9 m | captures 83
+mode Mission | item 9/16 | alt 29.9 m | captures 84
+mode Mission | item 9/16 | alt 30.0 m | captures 85
+mode Mission | item 9/16 | alt 30.0 m | captures 85
+mode Mission | item 9/16 | alt 30.0 m | captures 86
+mode Mission | item 9/16 | alt 30.0 m | captures 87
+mode Mission | item 9/16 | alt 30.0 m | captures 88
+mode Mission | item 9/16 | alt 30.0 m | captures 88
+mode Mission | item 9/16 | alt 30.0 m | captures 89
+mode Mission | item 9/16 | alt 30.0 m | captures 90
+mode Mission | item 9/16 | alt 30.0 m | captures 91
+mode Mission | item 9/16 | alt 30.0 m | captures 91
+mode Mission | item 9/16 | alt 30.0 m | captures 92
+mode Mission | item 9/16 | alt 30.0 m | captures 93
+mode Mission | item 9/16 | alt 30.0 m | captures 94
+mode Mission | item 9/16 | alt 30.0 m | captures 94
+mode Mission | item 9/16 | alt 30.0 m | captures 95
+mode Mission | item 10/16 | alt 30.1 m | captures 95
+mode Mission | item 10/16 | alt 30.1 m | captures 95
+mode Mission | item 11/16 | alt 30.0 m | captures 96
+mode Mission | item 11/16 | alt 30.1 m | captures 96
+mode Mission | item 11/16 | alt 30.0 m | captures 96
+mode Mission | item 11/16 | alt 30.0 m | captures 97
+mode Mission | item 11/16 | alt 30.0 m | captures 97
+mode Mission | item 11/16 | alt 30.0 m | captures 98
+mode Mission | item 11/16 | alt 30.0 m | captures 99
+mode Mission | item 11/16 | alt 30.0 m | captures 99
+mode Mission | item 11/16 | alt 30.0 m | captures 100
+mode Mission | item 11/16 | alt 30.0 m | captures 101
+mode Mission | item 11/16 | alt 30.0 m | captures 102
+mode Mission | item 11/16 | alt 30.0 m | captures 102
+mode Mission | item 11/16 | alt 30.0 m | captures 103
+mode Mission | item 11/16 | alt 30.0 m | captures 104
+mode Mission | item 11/16 | alt 30.0 m | captures 105
+mode Mission | item 11/16 | alt 30.0 m | captures 106
+mode Mission | item 11/16 | alt 30.0 m | captures 106
+mode Mission | item 11/16 | alt 30.0 m | captures 107
+mode Mission | item 11/16 | alt 30.0 m | captures 108
+mode Mission | item 11/16 | alt 30.0 m | captures 109
+mode Mission | item 11/16 | alt 30.0 m | captures 109
+mode Mission | item 11/16 | alt 30.0 m | captures 110
+mode Mission | item 11/16 | alt 30.0 m | captures 111
+mode Mission | item 11/16 | alt 30.0 m | captures 112
+mode Mission | item 11/16 | alt 30.0 m | captures 112
+mode Mission | item 11/16 | alt 30.0 m | captures 113
+mode Mission | item 11/16 | alt 30.0 m | captures 114
+mode Mission | item 12/16 | alt 30.1 m | captures 114
+mode Mission | item 12/16 | alt 30.0 m | captures 114
+mode Mission | item 12/16 | alt 30.0 m | captures 114
+mode Mission | item 13/16 | alt 30.1 m | captures 115
+mode Mission | item 13/16 | alt 30.0 m | captures 115
+mode Mission | item 13/16 | alt 30.0 m | captures 115
+mode Mission | item 13/16 | alt 30.0 m | captures 116
+mode Mission | item 13/16 | alt 30.0 m | captures 117
+mode Mission | item 13/16 | alt 30.0 m | captures 118
+mode Mission | item 13/16 | alt 30.0 m | captures 118
+mode Mission | item 13/16 | alt 30.0 m | captures 119
+mode Mission | item 13/16 | alt 30.0 m | captures 120
+mode Mission | item 13/16 | alt 30.0 m | captures 121
+mode Mission | item 13/16 | alt 30.0 m | captures 121
+mode Mission | item 13/16 | alt 30.0 m | captures 122
+mode Mission | item 13/16 | alt 30.0 m | captures 123
+mode Mission | item 13/16 | alt 30.0 m | captures 124
+mode Mission | item 13/16 | alt 30.0 m | captures 124
+mode Mission | item 13/16 | alt 30.0 m | captures 125
+mode Mission | item 13/16 | alt 30.0 m | captures 126
+mode Mission | item 13/16 | alt 30.0 m | captures 127
+mode Mission | item 13/16 | alt 30.0 m | captures 127
+mode Mission | item 13/16 | alt 30.0 m | captures 128
+mode Mission | item 13/16 | alt 30.0 m | captures 129
+mode Mission | item 13/16 | alt 30.0 m | captures 130
+mode Mission | item 13/16 | alt 30.0 m | captures 131
+mode Mission | item 13/16 | alt 30.0 m | captures 131
+mode Mission | item 13/16 | alt 30.0 m | captures 132
+mode Mission | item 13/16 | alt 30.0 m | captures 133
+mode Mission | item 14/16 | alt 30.0 m | captures 133
+mode Mission | item 14/16 | alt 30.0 m | captures 133
+mode Mission | item 14/16 | alt 30.0 m | captures 133
+mode Mission | item 15/16 | alt 30.0 m | captures 134
+mode Mission | item 15/16 | alt 30.0 m | captures 134
+mode Mission | item 15/16 | alt 30.1 m | captures 134
+mode Mission | item 15/16 | alt 30.0 m | captures 135
+mode Mission | item 15/16 | alt 30.0 m | captures 136
+mode Mission | item 15/16 | alt 30.0 m | captures 136
+mode Mission | item 15/16 | alt 30.0 m | captures 137
+mode Mission | item 15/16 | alt 30.0 m | captures 138
+mode Mission | item 15/16 | alt 30.0 m | captures 139
+mode Mission | item 15/16 | alt 30.0 m | captures 139
+mode Mission | item 15/16 | alt 30.0 m | captures 140
+mode Mission | item 15/16 | alt 30.0 m | captures 141
+mode Mission | item 15/16 | alt 30.0 m | captures 142
+mode Mission | item 15/16 | alt 30.0 m | captures 143
+mode Mission | item 15/16 | alt 30.0 m | captures 143
+mode Mission | item 15/16 | alt 30.0 m | captures 144
+mode Mission | item 15/16 | alt 30.0 m | captures 145
+mode Mission | item 15/16 | alt 30.0 m | captures 146
+mode Mission | item 15/16 | alt 30.0 m | captures 146
+mode Mission | item 15/16 | alt 30.0 m | captures 147
+mode Mission | item 15/16 | alt 30.0 m | captures 148
+mode Mission | item 15/16 | alt 30.0 m | captures 149
+mode Mission | item 15/16 | alt 30.0 m | captures 149
+mode Mission | item 15/16 | alt 30.0 m | captures 150
+mode Mission | item 15/16 | alt 30.0 m | captures 151
+mode Mission | item 15/16 | alt 30.0 m | captures 151
+Survey complete; returning to launch...
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.1 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 30.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 28.8 m | captures 152
+mode Return To Launch | item 16/16 | alt 27.4 m | captures 152
+mode Return To Launch | item 16/16 | alt 26.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 24.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 23.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 21.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 20.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 18.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 17.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 15.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 14.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 12.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 11.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 9.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 8.2 m | captures 152
+mode Return To Launch | item 16/16 | alt 7.1 m | captures 152
+mode Return To Launch | item 16/16 | alt 6.1 m | captures 152
+mode Return To Launch | item 16/16 | alt 5.3 m | captures 152
+mode Return To Launch | item 16/16 | alt 4.6 m | captures 152
+mode Return To Launch | item 16/16 | alt 3.9 m | captures 152
+mode Return To Launch | item 16/16 | alt 3.2 m | captures 152
+mode Return To Launch | item 16/16 | alt 2.5 m | captures 152
+mode Return To Launch | item 16/16 | alt 1.8 m | captures 152
+mode Return To Launch | item 16/16 | alt 1.1 m | captures 152
+mode Return To Launch | item 16/16 | alt 0.4 m | captures 152
+mode Return To Launch | item 16/16 | alt -0.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 0.0 m | captures 152
+mode Return To Launch | item 16/16 | alt 0.0 m | captures 152
+Captures: 152, queue drops: 0
+Outcome: success (exit 0)

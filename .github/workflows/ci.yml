@@ -1,0 +1,41 @@
+# CI: build and unit-test on every push / pull request. No PX4 SITL here (too heavy for CI);
+# flight results come from the committed run folders (runs/demo, docs/test-report.md).
+# MAVSDK is not installed, so CMake skips mission_node / hello_drone; everything else builds.
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  cpp:
+    name: C++ ${{ matrix.name }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: release
+            flags: ""
+          - name: asan-ubsan
+            flags: "-DASL_SANITIZE=ON"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build tools
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends cmake g++ libgtest-dev
+      - name: Configure (warnings are errors)
+        run: cmake -S . -B build -DCMAKE_COMPILE_WARNING_AS_ERROR=ON ${{ matrix.flags }}
+      - name: Build
+        run: cmake --build build -j2
+      - name: Unit tests
+        run: ctest --test-dir build --output-on-failure
+
+  python:
+    name: Python report
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends python3-matplotlib python3-numpy python3-pytest
+      - name: Report tests
+        run: python3 -m pytest analysis/tests -q
+      - name: Report on the committed demo run (smoke test)
+        run: python3 analysis/report.py runs/demo --link runs/demo/link_stats.csv
