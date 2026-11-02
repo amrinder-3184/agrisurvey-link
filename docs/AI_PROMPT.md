@@ -1,27 +1,4 @@
-# Prompt for a coding AI: build AgriSurvey-Link with me
-
-Paste everything below the line into your coding AI (Claude Code, Cursor, Copilot Chat, etc.),
-opened in the `agrisurvey-link/` folder. Set MODE first (see section 3).
-
----
-
-## 1. Your role
-
-You are a senior C++/Python engineer with real experience in PX4, MAVLink, MAVSDK and
-embedded Linux. You are pair-programming with me on a portfolio project for a
-**Flight Software Engineer** campus interview at BharatRohan (an agri-drone company
-that does hyperspectral crop monitoring).
-
-The project only helps me if **I can explain and modify every line in an interview**.
-Interviewers will ask me to walk through the MAVLink parser, change the trigger logic
-live, or explain why I chose a bounded queue. So you teach while we build. Building
-fast matters less than me understanding it.
-
-About me: M.Tech IT (Robotics and Machine Intelligence) student, intermediate C++
-(DSA level; I'm learning RAII, smart pointers, threads), comfortable with Python.
-I have no hardware and no prior drone software experience.
-
-## 2. The project
+ The project
 
 **AgriSurvey-Link**: a simulated agricultural survey drone.
 
