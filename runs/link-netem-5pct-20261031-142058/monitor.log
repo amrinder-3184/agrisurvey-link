@@ -1,0 +1,112 @@
+Listening on UDP 14550, writing /home/ammy/agrisurvey-link/runs/link-netem-5pct-20261031-142058/link_stats.csv
+t=1s  frames 326  rate 325/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=2s  frames 709  rate 383/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=3s  frames 1082  rate 373/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=4s  frames 1465  rate 383/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=5s  frames 1838  rate 373/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=6s  frames 2217  rate 379/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=7s  frames 2589  rate 372/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=8s  frames 2967  rate 378/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=9s  frames 3340  rate 373/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=10s  frames 3720  rate 380/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=11s  frames 4092  rate 372/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=12s  frames 4471  rate 379/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=13s  frames 4843  rate 372/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=14s  frames 5221  rate 378/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=15s  frames 5594  rate 373/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=16s  frames 5972  rate 378/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=17s  frames 6344  rate 372/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=18s  frames 6723  rate 379/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=19s  frames 7095  rate 372/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=20s  frames 7475  rate 380/s  crc_err 0  lost 0 (0.00%)  hb_age 0.60s
+t=21s  frames 7730  rate 248/s  crc_err 0  lost 781 (9.18%)  hb_age 0.32s
+t=22s  frames 8134  rate 412/s  crc_err 0  lost 2081 (20.37%)  hb_age 0.61s
+t=23s  frames 8469  rate 338/s  crc_err 0  lost 3637 (30.04%)  hb_age 0.60s
+t=24s  frames 8714  rate 210/s  crc_err 0  lost 4936 (36.16%)  hb_age 0.65s
+t=25s  frames 9039  rate 389/s  crc_err 0  lost 5726 (38.78%)  hb_age 0.57s
+t=26s  frames 9360  rate 320/s  crc_err 0  lost 6769 (41.97%)  hb_age 0.61s
+t=27s  frames 9714  rate 354/s  crc_err 0  lost 7556 (43.75%)  hb_age 0.61s
+t=28s  frames 10023  rate 309/s  crc_err 0  lost 8352 (45.45%)  hb_age 0.61s
+t=29s  frames 10343  rate 320/s  crc_err 0  lost 9645 (48.25%)  hb_age 1.61s
+t=30s  frames 10628  rate 262/s  crc_err 0  lost 9916 (48.27%)  hb_age 0.57s
+t=31s  frames 10917  rate 300/s  crc_err 0  lost 10441 (48.89%)  hb_age 0.66s
+t=32s  frames 11255  rate 358/s  crc_err 0  lost 11231 (49.95%)  hb_age 0.45s
+t=33s  frames 11575  rate 317/s  crc_err 0  lost 11754 (50.38%)  hb_age 0.62s
+t=34s  frames 11877  rate 304/s  crc_err 0  lost 11773 (49.78%)  hb_age 0.14s
+t=35s  frames 12113  rate 234/s  crc_err 0  lost 12045 (49.86%)  hb_age 0.61s
+t=36s  frames 12399  rate 276/s  crc_err 0  lost 12575 (50.35%)  hb_age 0.65s
+t=37s  frames 12729  rate 344/s  crc_err 0  lost 13107 (50.73%)  hb_age 0.51s
+t=38s  frames 13070  rate 344/s  crc_err 0  lost 13380 (50.59%)  hb_age 0.58s
+t=39s  frames 13398  rate 297/s  crc_err 0  lost 14675 (52.27%)  hb_age 0.71s
+t=40s  frames 13753  rate 393/s  crc_err 0  lost 15471 (52.94%)  hb_age 0.57s
+t=41s  frames 14092  rate 339/s  crc_err 0  lost 16765 (54.33%)  hb_age 0.61s
+t=42s  frames 14391  rate 300/s  crc_err 0  lost 17293 (54.58%)  hb_age 0.43s
+t=43s  frames 14736  rate 344/s  crc_err 0  lost 18079 (55.09%)  hb_age 0.59s
+t=44s  frames 15029  rate 288/s  crc_err 0  lost 19884 (56.95%)  hb_age 0.46s
+t=45s  frames 15306  rate 249/s  crc_err 0  lost 20155 (56.84%)  hb_age 0.70s
+t=46s  frames 15646  rate 340/s  crc_err 0  lost 20943 (57.24%)  hb_age 0.74s
+t=47s  frames 15980  rate 385/s  crc_err 0  lost 22496 (58.47%)  hb_age 0.61s
+t=48s  frames 16295  rate 315/s  crc_err 0  lost 24057 (59.62%)  hb_age 0.61s
+t=49s  frames 16585  rate 263/s  crc_err 0  lost 24839 (59.96%)  hb_age 0.71s
+t=50s  frames 16912  rate 365/s  crc_err 0  lost 25623 (60.24%)  hb_age 0.61s
+t=51s  frames 17216  rate 302/s  crc_err 0  lost 26407 (60.53%)  hb_age 0.50s
+t=52s  frames 17520  rate 278/s  crc_err 0  lost 26421 (60.13%)  hb_age 0.63s
+t=53s  frames 17863  rate 320/s  crc_err 0  lost 27215 (60.37%)  hb_age 0.71s
+t=54s  frames 18214  rate 426/s  crc_err 0  lost 27742 (60.37%)  hb_age 0.60s
+t=55s  frames 18516  rate 270/s  crc_err 0  lost 28267 (60.42%)  hb_age 0.69s
+t=56s  frames 18830  rate 318/s  crc_err 0  lost 29817 (61.29%)  hb_age 0.55s
+t=57s  frames 19159  rate 349/s  crc_err 0  lost 30853 (61.69%)  hb_age 0.65s
+t=58s  frames 19544  rate 406/s  crc_err 0  lost 31386 (61.63%)  hb_age 0.60s
+t=59s  frames 19770  rate 225/s  crc_err 0  lost 31659 (61.56%)  hb_age 0.55s
+t=60s  frames 20151  rate 382/s  crc_err 0  lost 32448 (61.69%)  hb_age 0.59s
+t=61s  frames 20450  rate 299/s  crc_err 0  lost 32719 (61.54%)  hb_age 0.59s
+t=62s  frames 20774  rate 281/s  crc_err 0  lost 33760 (61.91%)  hb_age 0.75s
+t=63s  frames 21029  rate 266/s  crc_err 0  lost 34291 (61.99%)  hb_age 0.71s
+t=64s  frames 21395  rate 412/s  crc_err 0  lost 35078 (62.11%)  hb_age 0.50s
+t=65s  frames 21713  rate 318/s  crc_err 0  lost 35861 (62.29%)  hb_age 0.39s
+t=66s  frames 22044  rate 331/s  crc_err 0  lost 36387 (62.27%)  hb_age 0.56s
+t=67s  frames 22335  rate 276/s  crc_err 0  lost 37677 (62.78%)  hb_age 0.65s
+t=68s  frames 22596  rate 239/s  crc_err 0  lost 37698 (62.52%)  hb_age 0.74s
+t=69s  frames 22947  rate 347/s  crc_err 0  lost 37974 (62.33%)  hb_age 0.75s
+t=70s  frames 23165  rate 258/s  crc_err 0  lost 37986 (62.12%)  hb_age 0.39s
+t=71s  frames 23566  rate 403/s  crc_err 0  lost 38518 (62.04%)  hb_age 0.59s
+t=72s  frames 23862  rate 296/s  crc_err 0  lost 39551 (62.37%)  hb_age 0.59s
+t=73s  frames 24211  rate 349/s  crc_err 0  lost 41113 (62.94%)  hb_age 0.41s
+t=74s  frames 24533  rate 292/s  crc_err 0  lost 41386 (62.78%)  hb_age 0.70s
+t=75s  frames 24880  rate 382/s  crc_err 0  lost 41922 (62.76%)  hb_age 0.55s
+t=76s  frames 25105  rate 210/s  crc_err 0  lost 42955 (63.11%)  hb_age 0.54s
+t=77s  frames 25501  rate 359/s  crc_err 0  lost 43752 (63.18%)  hb_age 0.78s
+t=78s  frames 25772  rate 288/s  crc_err 0  lost 44534 (63.34%)  hb_age 0.64s
+t=79s  frames 26097  rate 373/s  crc_err 0  lost 46088 (63.85%)  hb_age 1.51s
+t=80s  frames 26434  rate 335/s  crc_err 0  lost 46105 (63.56%)  hb_age 0.55s
+t=81s  frames 26808  rate 374/s  crc_err 0  lost 46105 (63.23%)  hb_age 0.60s
+t=82s  frames 27185  rate 377/s  crc_err 0  lost 46105 (62.91%)  hb_age 0.60s
+t=83s  frames 27558  rate 373/s  crc_err 0  lost 46105 (62.59%)  hb_age 0.60s
+t=84s  frames 27936  rate 378/s  crc_err 0  lost 46105 (62.27%)  hb_age 0.60s
+t=85s  frames 28309  rate 373/s  crc_err 0  lost 46105 (61.96%)  hb_age 0.60s
+t=86s  frames 28686  rate 377/s  crc_err 0  lost 46105 (61.65%)  hb_age 0.60s
+t=87s  frames 29060  rate 374/s  crc_err 0  lost 46105 (61.34%)  hb_age 0.60s
+t=88s  frames 29437  rate 377/s  crc_err 0  lost 46105 (61.03%)  hb_age 0.60s
+t=89s  frames 29810  rate 373/s  crc_err 0  lost 46105 (60.73%)  hb_age 0.60s
+t=90s  frames 30190  rate 380/s  crc_err 0  lost 46105 (60.43%)  hb_age 0.60s
+t=91s  frames 30563  rate 373/s  crc_err 0  lost 46105 (60.14%)  hb_age 0.60s
+t=92s  frames 30940  rate 377/s  crc_err 0  lost 46105 (59.84%)  hb_age 0.60s
+t=93s  frames 31314  rate 374/s  crc_err 0  lost 46105 (59.55%)  hb_age 0.60s
+t=94s  frames 31696  rate 382/s  crc_err 0  lost 46105 (59.26%)  hb_age 0.60s
+t=95s  frames 32069  rate 373/s  crc_err 0  lost 46105 (58.98%)  hb_age 0.60s
+t=96s  frames 32447  rate 378/s  crc_err 0  lost 46105 (58.69%)  hb_age 0.60s
+t=97s  frames 32820  rate 373/s  crc_err 0  lost 46105 (58.42%)  hb_age 0.60s
+t=98s  frames 33197  rate 377/s  crc_err 0  lost 46105 (58.14%)  hb_age 0.60s
+t=99s  frames 33571  rate 374/s  crc_err 0  lost 46105 (57.87%)  hb_age 0.60s
+t=100s  frames 33950  rate 379/s  crc_err 0  lost 46105 (57.59%)  hb_age 0.60s
+
+Stopped. frames_ok 33970, crc_errors 0, unknown_msgid 0, bad_header 0, bytes_skipped 0, lost 46105 (57.577%)
+Top messages:
+    4551  ATTITUDE (30)
+    4548  ATTITUDE_QUATERNION (31)
+    4496  LOCAL_POSITION_NED (32)
+    4484  SERVO_OUTPUT_RAW (36)
+    4471  ATTITUDE_TARGET (83)
+    4467  POSITION_TARGET_LOCAL_NED (85)
+    4444  GLOBAL_POSITION_INT (33)
+     481  GPS_RAW_INT (24)

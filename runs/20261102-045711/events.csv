@@ -1,0 +1,89 @@
+t_mono_ns,t_s,event,detail
+356756878278,0.9,mode,Hold
+356756922878,0.9,armed,no
+356756924678,0.9,landed_state,Unknown
+356756925678,0.9,gps_fix,No Gps
+356756926578,0.9,global_position,LOST
+356756927578,0.9,local_position,LOST
+356756928378,0.9,home_position,LOST
+357312060199,1.4,command,arm
+357320715199,1.4,command,takeoff
+357328787999,1.5,landed_state,On Ground
+357328804599,1.5,gps_fix,Fix 3D
+357328806099,1.5,global_position,ok
+357328806999,1.5,local_position,ok
+357328807799,1.5,home_position,ok
+357328811999,1.5,battery,>= 100 %
+357828902419,2.0,mode,Takeoff
+357828921719,2.0,armed,yes
+357828924819,2.0,mission_item,0/16
+359829355195,4.0,landed_state,Taking Off
+359829373395,4.0,battery,>= 90 %
+365831637954,10.0,battery,>= 80 %
+371833279512,16.0,battery,>= 70 %
+377835473886,22.0,command,start_mission
+377840746386,22.0,battery,>= 60 %
+378840945542,23.0,mode,Mission
+378840966442,23.0,landed_state,In Air
+383842492621,28.0,battery,>= 50 %
+389343983069,33.5,mission_item,1/16
+414851068627,59.0,mission_item,2/16
+417852166014,62.0,mission_item,3/16
+443860313221,88.0,mission_item,4/16
+446860928357,91.0,mission_item,5/16
+448361286075,92.5,gps_fix,No Gps
+452863064799,97.0,mode,Unknown
+454863843895,99.0,global_position,LOST
+455364084619,99.5,local_position,LOST
+455864240743,100.0,failsafe,aborted by autopilot (mode Unknown at item 5/16)
+455864254943,100.0,local_position,ok
+456364341267,100.5,local_position,LOST
+456864463390,101.0,local_position,ok
+457364670644,101.5,local_position,LOST
+457864836518,102.0,local_position,ok
+458364943293,102.5,local_position,LOST
+458865085467,103.0,local_position,ok
+459365190541,103.5,local_position,LOST
+459865295415,104.0,local_position,ok
+460365400790,104.5,local_position,LOST
+460865541864,105.0,local_position,ok
+461365779138,105.5,local_position,LOST
+461866008512,106.0,local_position,ok
+462366115687,106.5,local_position,LOST
+462866382661,107.0,local_position,ok
+463366607135,107.5,local_position,LOST
+463866808410,108.0,local_position,ok
+464367075084,108.5,local_position,LOST
+464867302358,109.0,local_position,ok
+465367493855,109.5,local_position,LOST
+465867716529,110.0,local_position,ok
+466367956602,110.5,local_position,LOST
+466868169476,111.0,local_position,ok
+467368322610,111.5,local_position,LOST
+467868444029,112.0,local_position,ok
+468368574149,112.5,local_position,LOST
+468868701268,113.0,local_position,ok
+469368820087,113.5,local_position,LOST
+469868957807,114.0,local_position,ok
+470369060426,114.5,local_position,LOST
+470869260546,115.0,local_position,ok
+471369360965,115.5,local_position,LOST
+471869485485,116.0,local_position,ok
+472369754104,116.5,local_position,LOST
+472869993624,117.0,local_position,ok
+473370138326,117.5,local_position,LOST
+473870325236,118.0,local_position,ok
+474370570247,118.5,local_position,LOST
+474870698858,119.0,local_position,ok
+475370990168,119.5,local_position,LOST
+475871186379,120.0,local_position,ok
+476371389589,120.5,local_position,LOST
+476871599200,121.0,local_position,ok
+477371807410,121.5,local_position,LOST
+477872116421,122.0,local_position,ok
+478372227431,122.5,local_position,LOST
+478872381642,123.0,local_position,ok
+479372484553,123.5,local_position,LOST
+479872600763,124.0,local_position,ok
+499877618466,144.0,landed_state,On Ground
+499877662666,144.0,outcome,"aborted by autopilot (mode Unknown at item 5/16), landed (exit 6)"

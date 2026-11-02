@@ -1,0 +1,45 @@
+t_mono_ns,t_s,event,detail
+811034180680,0.4,mode,Hold
+811034200380,0.4,armed,no
+811034201980,0.4,landed_state,Unknown
+811034202980,0.4,gps_fix,No Gps
+811534295163,0.9,landed_state,On Ground
+811534318863,0.9,gps_fix,Fix 3D
+811534327463,0.9,battery,>= 100 %
+812089908655,1.5,command,arm
+812098298156,1.5,command,takeoff
+812110162558,1.5,global_position,ok
+812110183758,1.5,local_position,ok
+812110185158,1.5,home_position,ok
+812110187358,1.5,mission_item,0/16
+813110378224,2.5,mode,Takeoff
+813110395924,2.5,armed,yes
+813110398424,2.5,battery,>= 90 %
+814110584690,3.5,landed_state,Taking Off
+821113348467,10.5,battery,>= 80 %
+827115617325,16.5,battery,>= 70 %
+832617663827,22.0,command,start_mission
+833122110155,22.5,mode,Mission
+833122129355,22.5,landed_state,In Air
+833122131955,22.5,battery,>= 60 %
+839123901187,28.5,battery,>= 50 %
+844125297639,33.5,mission_item,1/16
+870133451861,59.5,mission_item,2/16
+873134232103,62.5,mission_item,3/16
+899142310404,88.6,mission_item,4/16
+902143123266,91.6,mission_item,5/16
+928152191548,117.6,mission_item,6/16
+931153092599,120.6,mission_item,7/16
+957160793310,146.6,mission_item,8/16
+960161832517,149.6,mission_item,9/16
+986168379250,175.6,mission_item,10/16
+989169258548,178.6,mission_item,11/16
+1015176544810,204.6,mission_item,12/16
+1018177765299,207.6,mission_item,13/16
+1044186283138,233.6,mission_item,14/16
+1048187369346,237.6,mission_item,15/16
+1073695346445,263.1,mission_item,16/16
+1074195622844,263.6,mode,Return To Launch
+1096203015922,285.6,landed_state,Landing
+1123210999877,312.6,landed_state,On Ground
+1123211028877,312.6,outcome,success (exit 0)

@@ -3,22 +3,33 @@
 //
 // Usage:
 //   mission_node --url udpin://0.0.0.0:14540 --field config/field_local.csv
-//                --camera config/camera.ini --out runs/
+//                --camera config/camera.ini --out runs/ --role gcs
+//
+//   --role gcs        (default) mission_node is the ground station: its heartbeat is the
+//                     link PX4 monitors for NAV_DLL_ACT.
+//   --role companion  mission_node runs as an onboard computer; a separate GCS must provide
+//                     the ground-station heartbeat (used for the data-link-loss test).
 //
 // Output folder runs/<YYYYmmdd-HHMMSS>/:
 //   mission_plan.csv  planned waypoints (phase 2)
 //   geotags.csv       one row per capture (phase 3)
 //   telemetry.csv     2 Hz flown track (phase 3)
+//   events.csv        mode / armed / landed / GPS / position / battery / mission changes,
+//                     and our own commands (phase 5)
 //   run_meta.json     config, versions, counts, outcome
 //
 // Threading:
 //   MAVSDK callback thread: position -> DistanceTrigger -> CaptureQueue::push (no I/O,
 //                           no allocation); attitude/velocity/mode/progress store "latest".
 //   GeotagLogger thread:    CaptureQueue::pop_wait -> geotags.csv
-//   main thread:            commands, waits, status line, telemetry.csv
+//   main thread:            commands, waits, status line, telemetry.csv, events.csv
+//
+// Failsafes: if PX4 leaves Mission mode before the last item (GPS loss, link loss, low
+// battery...), the autopilot is in charge. We log it, send no commands, and wait to land.
 //
 // Exit codes: 0 ok, 1 usage/config/files, 2 no autopilot, 3 not ready (health/home),
-//             4 command failed, 5 timeout, 130 interrupted (Ctrl-C).
+//             4 command failed, 5 timeout, 6 mission aborted by an autopilot failsafe,
+//             130 interrupted (Ctrl-C).
 
 #include <mavsdk/mavsdk.hpp>
 #include <mavsdk/plugins/action/action.hpp>
@@ -48,6 +59,7 @@
 
 #include "asl/capture_queue.h"
 #include "asl/config.h"
+#include "asl/event_log.h"
 #include "asl/geo.h"
 #include "asl/geotag_logger.h"
 #include "asl/survey_planner.h"
@@ -101,13 +113,14 @@ struct Args {
     std::string field = "config/field_local.csv";
     std::string camera = "config/camera.ini";
     std::string out = "runs";
+    std::string role = "gcs";  // gcs | companion
 };
 
 void usage(const char* bin) {
     std::cerr << "Usage: " << bin
-              << " [--url URL] [--field CSV] [--camera INI] [--out DIR]\n"
+              << " [--url URL] [--field CSV] [--camera INI] [--out DIR] [--role gcs|companion]\n"
                  "  defaults: --url udpin://0.0.0.0:14540 --field config/field_local.csv\n"
-                 "            --camera config/camera.ini --out runs\n";
+                 "            --camera config/camera.ini --out runs --role gcs\n";
 }
 
 bool parse_args(int argc, char** argv, Args& args) {
@@ -125,6 +138,8 @@ bool parse_args(int argc, char** argv, Args& args) {
             args.camera = value;
         } else if (flag == "--out") {
             args.out = value;
+        } else if (flag == "--role" && (value == "gcs" || value == "companion")) {
+            args.role = value;
         } else {
             return false;
         }
@@ -209,6 +224,7 @@ struct RunMeta {
     std::string outcome = "not started";
     std::uint64_t captures = 0;
     std::uint64_t queue_drops = 0;
+    std::size_t events = 0;
 };
 
 std::string json_string(const std::string& s) {
@@ -244,6 +260,7 @@ void write_meta_json(const fs::path& path, const RunMeta& m) {
       << "  \"px4_version\": " << json_string(m.px4_version) << ",\n"
       << "  \"mavsdk_version\": " << json_string(m.mavsdk_version) << ",\n"
       << "  \"connection_url\": " << json_string(m.args.url) << ",\n"
+      << "  \"role\": " << json_string(m.args.role) << ",\n"
       << "  \"field_file\": " << json_string(m.args.field) << ",\n"
       << "  \"camera_file\": " << json_string(m.args.camera) << ",\n"
       << "  \"home_lat_deg\": " << json_number(m.home.lat_deg) << ",\n"
@@ -262,6 +279,7 @@ void write_meta_json(const fs::path& path, const RunMeta& m) {
       << "  \"captures\": " << m.captures << ",\n"
       << "  \"queue_capacity\": " << kQueueCapacity << ",\n"
       << "  \"queue_drops\": " << m.queue_drops << ",\n"
+      << "  \"events\": " << m.events << ",\n"
       << "  \"ndvi_note\": \"ndvi_synthetic values are SYNTHETIC, not real crop data\"\n"
       << "}\n";
 }
@@ -329,9 +347,23 @@ int main(int argc, char** argv) {
         std::cerr << "ERROR: " << e.what() << "\n";
         return 1;
     }
+    std::unique_ptr<asl::EventLog> events;
+    try {
+        events = std::make_unique<asl::EventLog>((run_dir / "events.csv").string());
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR: " << e.what() << "\n";
+        return 1;
+    }
+    const std::int64_t t0_ns = mono_ns();
+    const auto event = [&](const std::string& name, const std::string& detail) {
+        const std::int64_t now = mono_ns();
+        events->log(now, static_cast<double>(now - t0_ns) * 1e-9, name, detail);
+    };
 
     // Every exit from here on stops the logger (flushing geotags.csv) and records why.
     const auto finish = [&](const std::string& outcome, int code) {
+        event("outcome", outcome + " (exit " + std::to_string(code) + ")");
+        meta.events = events->count();
         logger->stop();
         telemetry_csv.flush();
         meta.captures = logger->written();
@@ -345,7 +377,11 @@ int main(int argc, char** argv) {
     };
 
     // ---- Connect -----------------------------------------------------------------------
-    Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
+    // The role decides the MAVLink heartbeat type we send: MAV_TYPE_GCS for a ground
+    // station, MAV_TYPE_ONBOARD_CONTROLLER for a companion. PX4's "GCS connection" (and its
+    // NAV_DLL_ACT failsafe) only counts GCS heartbeats.
+    Mavsdk mavsdk{Mavsdk::Configuration{args.role == "companion" ? ComponentType::CompanionComputer
+                                                                  : ComponentType::GroundStation}};
     meta.mavsdk_version = mavsdk.version();
     const ConnectionResult conn = mavsdk.add_any_connection(args.url);
     if (conn != ConnectionResult::Success) {
@@ -362,8 +398,56 @@ int main(int argc, char** argv) {
     Mission mission{system.value()};
     Info info{system.value()};
 
+    // ---- Event detection: poll MAVSDK's cached values, log transitions ----------------
+    // The getters return the latest value MAVSDK received (no MAVLink round trip), so this
+    // is cheap. Resolution is one tick (500 ms): enough for mode and health changes.
+    // Health flags must hold for 2 polls (1 s) before they are logged: during a GPS-loss
+    // blind landing MAVSDK's local-position health flipped every poll (run 20261102-045711).
+    asl::Watch<std::string> w_mode, w_landed, w_fix;
+    asl::Watch<bool> w_armed;
+    asl::Watch<bool> w_global_ok(2), w_local_ok(2), w_home_ok(2);
+    asl::Watch<int> w_item, w_battery_10pct;
+    // Log `detail` under `name` if `value` differs from the previous poll.
+    const auto track = [&](auto& watch, const char* name, const auto& value,
+                           const std::string& detail) {
+        if (watch.changed(value)) {
+            event(name, detail);
+        }
+    };
+    const auto ok_text = [](bool ok) { return std::string(ok ? "ok" : "LOST"); };
+    const auto poll_events = [&] {
+        const std::string mode = text(telemetry.flight_mode());
+        const std::string landed = text(telemetry.landed_state());
+        const std::string fix = text(telemetry.gps_info().fix_type);
+        const bool armed = telemetry.armed();
+        const Telemetry::Health h = telemetry.health();
+        // MAVSDK has no name for some PX4 modes (e.g. the failsafe Descend / "blind land").
+        track(w_mode, "mode", mode,
+              mode == "Unknown" ? "Unknown (no MAVSDK name; e.g. PX4 failsafe Descend)" : mode);
+        track(w_armed, "armed", armed, armed ? "yes" : "no");
+        track(w_landed, "landed_state", landed, landed);
+        track(w_fix, "gps_fix", fix, fix);
+        track(w_global_ok, "global_position", h.is_global_position_ok,
+              ok_text(h.is_global_position_ok));
+        track(w_local_ok, "local_position", h.is_local_position_ok,
+              ok_text(h.is_local_position_ok));
+        track(w_home_ok, "home_position", h.is_home_position_ok, ok_text(h.is_home_position_ok));
+
+        const float battery = telemetry.battery().remaining_percent;  // 0..100, NaN if unknown
+        if (std::isfinite(battery)) {
+            const int bucket = static_cast<int>(battery / 10.0f) * 10;  // log every 10 % step
+            track(w_battery_10pct, "battery", bucket, ">= " + std::to_string(bucket) + " %");
+        }
+        const int item = shared.progress_current;
+        const int total = shared.progress_total;
+        if (total > 0) {
+            track(w_item, "mission_item", item, std::to_string(item) + "/" + std::to_string(total));
+        }
+    };
+
     int tick = 0;
-    const auto on_tick = [&] {  // main thread: 2 Hz track row, 1 Hz status line
+    const auto on_tick = [&] {  // main thread: events, 2 Hz track row, 1 Hz status line
+        poll_events();
         const Telemetry::Position p = telemetry.position();
         const std::string mode = text(telemetry.flight_mode());
         telemetry_csv << mono_ns() << ',' << std::fixed << std::setprecision(8) << p.latitude_deg
@@ -384,7 +468,7 @@ int main(int argc, char** argv) {
             const Telemetry::Health h = telemetry.health();
             return telemetry.health_all_ok() && h.is_armable && h.is_home_position_ok;
         },
-        [] {});
+        poll_events);
     if (ready == Wait::Interrupted) {
         return finish("interrupted before takeoff", 130);
     }
@@ -513,6 +597,7 @@ int main(int argc, char** argv) {
     // ---- Arm and take off --------------------------------------------------------------
     const auto abort_rtl = [&](const std::string& why, int code) {
         std::cerr << "ERROR: " << why << " -> return to launch\n";
+        event("command", "return_to_launch (" + why + ")");
         const Action::Result r = action.return_to_launch();
         if (r != Action::Result::Success) {
             std::cerr << "ERROR: return_to_launch also failed: " << r << "\n";
@@ -524,12 +609,14 @@ int main(int argc, char** argv) {
         std::cerr << "ERROR: set_takeoff_altitude: " << ar << "\n";
         return finish("takeoff altitude failed", 4);
     }
+    event("command", "arm");
     ar = action.arm();
     if (ar != Action::Result::Success) {
         std::cerr << "ERROR: arm: " << ar << "\n";
         return finish("arm failed", 4);
     }
     std::cout << "Armed. Taking off to " << meta.cfg.survey.altitude_m << " m...\n";
+    event("command", "takeoff");
     ar = action.takeoff();
     if (ar != Action::Result::Success) {
         return abort_rtl("takeoff failed: " + text(ar), 4);
@@ -546,6 +633,7 @@ int main(int argc, char** argv) {
     }
 
     // ---- Fly the survey ----------------------------------------------------------------
+    event("command", "start_mission");
     mr = mission.start_mission();
     if (mr != Mission::Result::Success) {
         return abort_rtl("start_mission failed: " + text(mr), 4);
@@ -554,15 +642,47 @@ int main(int argc, char** argv) {
     const auto mission_timeout = std::chrono::seconds(
         static_cast<long>(2.0 * meta.planned_path_m / meta.cfg.speed_mps) + 120);
     std::cout << "Mission started (timeout " << mission_timeout.count() << " s)\n";
+    const auto finished = [&] {
+        return shared.progress_total > 0 && shared.progress_current == shared.progress_total;
+    };
+    // Mode switches are not instant, so "left Mission" only counts after we have seen it.
+    bool seen_mission = false;
     const Wait flown = wait_until(
         mission_timeout,
-        [&] { return shared.progress_total > 0 && shared.progress_current == shared.progress_total; },
+        [&] {
+            const bool in_mission = shared.mode == Telemetry::FlightMode::Mission;
+            seen_mission = seen_mission || in_mission;
+            return finished() || (seen_mission && !in_mission);
+        },
         on_tick);
     if (flown == Wait::Interrupted) {
         return abort_rtl("interrupted during mission", 130);
     }
     if (flown == Wait::Timeout) {
         return abort_rtl("mission did not finish in time", 5);
+    }
+    if (!finished()) {
+        // After the last item PX4 switches to Return itself, and the final progress message
+        // may arrive just after the mode change: give it a moment before calling a failsafe.
+        wait_until(3s, finished, on_tick);
+    }
+    if (!finished()) {
+        // PX4 took over (failsafe or a pilot/GCS mode change). Commanding anything now could
+        // fight the autopilot's decision, so we only record what happens until touchdown.
+        const std::string why = "aborted by autopilot (mode " + text(shared.mode.load()) +
+                                " at item " + std::to_string(shared.progress_current.load()) +
+                                "/" + std::to_string(shared.progress_total.load()) + ")";
+        std::cerr << "WARNING: mission " << why << "; waiting for the vehicle to land\n";
+        event("failsafe", why);
+        const Wait down = wait_until(kLandTimeout, [&] { return !telemetry.in_air(); }, on_tick);
+        if (down == Wait::Interrupted) {
+            return finish(why + ", interrupted before landing", 130);
+        }
+        if (down == Wait::Timeout) {
+            return finish(why + ", did not land in time", 5);
+        }
+        on_tick();
+        return finish(why + ", landed", 6);
     }
 
     // ---- Return to launch (automatic after the last item) and land --------------------

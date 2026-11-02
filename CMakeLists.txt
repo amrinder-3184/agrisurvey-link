@@ -35,6 +35,7 @@ add_library(asl_core
   src/core/config.cpp
   src/core/capture_queue.cpp
   src/core/geotag_logger.cpp
+  src/core/event_log.cpp
 )
 target_include_directories(asl_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 find_package(Threads REQUIRED)                 # std::thread / condition_variable
@@ -47,6 +48,10 @@ add_library(asl_link
   src/link/link_stats.cpp
 )
 target_include_directories(asl_link PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+# link_monitor: UDP link-health monitor on our own parser (phase 4). No MAVSDK needed.
+add_executable(link_monitor src/link/monitor_main.cpp)
+target_link_libraries(link_monitor PRIVATE asl_link)
 
 # ---------------------------------------------------------------------------
 # Executables that talk to PX4 through MAVSDK (built only if MAVSDK is installed)
@@ -89,6 +94,9 @@ if(ASL_BUILD_TESTS)
     tests/test_capture_queue.cpp
     tests/test_synthetic_field.cpp
     tests/test_geotag_logger.cpp
+    tests/test_parser_robustness.cpp
+    tests/test_link_reorder.cpp
+    tests/test_event_log.cpp
   )
   target_link_libraries(asl_tests PRIVATE asl_core asl_link GTest::gtest_main)
   # Lets tests load the real files in config/ regardless of the working directory.

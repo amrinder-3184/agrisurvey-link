@@ -1,0 +1,74 @@
+make: Entering directory '/home/ammy/PX4-Autopilot'
+[0/1] cd /home/ammy/PX4-Autopilot/build/px4_sitl_default/src/modules/simulation/gz_bridge && /usr/bin/cmake -E env PX4_SIM_MODEL=gz_x500 GZ_IP=127.0.0.1 /home/ammy/PX4-Autopilot/build/px4_sitl_default/bin/px4
+
+______  __   __    ___ 
+| ___ \ \ \ / /   /   |
+| |_/ /  \ V /   / /| |
+|  __/   /   \  / /_| |
+| |     / /^\ \ \___  |
+\_|     \/   \/     |_/
+
+px4 starting.
+
+INFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0
+INFO  [init] found model autostart file as SYS_AUTOSTART=4001
+INFO  [param] selected parameter default file fs/parameters.bson
+INFO  [param] importing from 'fs/parameters.bson'
+INFO  [parameters] BSON document size 193 bytes, decoded 193 bytes (INT32:6, FLOAT:3)
+INFO  [param] selected parameter backup file fs/parameters_backup.bson
+INFO  [dataman] data manager file './fs/dataman' size is 1208528 bytes
+INFO  [init] Gazebo simulator 8.15.0
+INFO  [init] Starting gazebo with world: /home/ammy/PX4-Autopilot/Tools/simulation/gz/worlds/default.sdf
+INFO  [init] Waiting for Gazebo world...
+INFO  [init] Gazebo world is ready
+INFO  [init] Spawning Gazebo model
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="air_pressure_sensor"]/gz_frame_id:/home/ammy/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L219]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="magnetometer_sensor"]/gz_frame_id:/home/ammy/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L233]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="imu_sensor"]/gz_frame_id:/home/ammy/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L258]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+[1;33mWarning [Utils.cc:132][0m [/sdf/model[@name="x500_base"]/link[@name="base_link"]/sensor[@name="navsat_sensor"]/gz_frame_id:/home/ammy/PX4-Autopilot/Tools/simulation/gz/models/x500_base/model.sdf:L310]: XML Element[gz_frame_id], child of element[sensor], not defined in SDF. Copying[gz_frame_id] as children of [sensor].
+INFO  [lockstep_scheduler] setting initial absolute time to 4144000 us
+INFO  [gz_bridge] world: default, model: x500_0
+INFO  [gz_bridge] Subscribed to IMU[0]: /world/default/model/x500_0/link/base_link/sensor/imu_sensor/imu
+INFO  [gz_bridge] Subscribed to IMU[1]: /world/default/model/x500_0/link/base_link/sensor/imu_sensor_1/imu
+INFO  [gz_bridge] Subscribed to IMU[2]: /world/default/model/x500_0/link/base_link/sensor/imu_sensor_2/imu
+INFO  [gz_bridge] Subscribed to Magnetometer[0]: /world/default/model/x500_0/link/base_link/sensor/magnetometer_sensor/magneto
+INFO  [gz_bridge] Subscribed to Magnetometer[1]: /world/default/model/x500_0/link/base_link/sensor/magnetometer_sensor_1/magne
+INFO  [gz_bridge] Subscribed to GPS[0]: /world/default/model/x500_0/link/base_link/sensor/navsat_sensor/navsat
+INFO  [gz_bridge] Subscribed to GPS[1]: /world/default/model/x500_0/link/base_link/sensor/navsat_sensor_1/navsat
+INFO  [gz_bridge] Subscribed to Barometer[0]: /world/default/model/x500_0/link/base_link/sensor/air_pressure_sensor/air_pressu
+INFO  [gz_bridge] Subscribed to Barometer[1]: /world/default/model/x500_0/link/base_link/sensor/air_pressure_sensor_1/air_pres
+INFO  [init] Setting camera to follow x500_0
+INFO  [init] Camera follow offset set to -2.0, -2.0, 2.0
+INFO  [commander] LED: open /dev/led0 failed (22)
+WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
+INFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888
+INFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550
+INFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540
+INFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030
+INFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280
+INFO  [logger] logger started (mode=all)
+INFO  [logger] Max log file size: 1024 MiB
+INFO  [logger] Start file log (type: full)
+INFO  [logger] [logger] ./fs/log/2026-11-02/05_04_41.ulg	
+INFO  [logger] Opened full log file: ./fs/log/2026-11-02/05_04_41.ulg
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)
+INFO  [px4] Startup script returned successfully
+pxh> INFO  [tone_alarm] home set
+WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
+INFO  [tone_alarm] notify positive
+WARN  [health_and_arming_checks] Preflight Fail: No connection to the GCS
+INFO  [mavlink] partner IP: 127.0.0.1
+INFO  [commander] [32mReady for takeoff![0m
+INFO  [commander] Armed by external command	
+INFO  [tone_alarm] notify positive
+INFO  [navigator] Using default takeoff altitude: 30.0 m	
+INFO  [tone_alarm] arming warning
+INFO  [commander] Takeoff detected	
+INFO  [navigator] Executing Mission	
+INFO  [navigator] Climb to 30.0 meters above home	
+INFO  [navigator] Mission finished, loitering	
+INFO  [commander] Switching to Return	
+INFO  [navigator] Return: start return at 519 m (30 m above destination)	
+INFO  [navigator] Return: land at destination	
+INFO  [commander] Landing detected	

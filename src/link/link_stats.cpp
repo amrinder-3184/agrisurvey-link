@@ -11,18 +11,29 @@ void LinkStats::on_frame(std::uint8_t sysid, std::uint8_t compid, std::uint8_t s
         last_seq_.emplace(key, seq);  // first frame from this source: no history, no loss
         return;
     }
-    if (seq != it->second) {
-        // 8-bit wrap: computing in uint8_t makes 0 - 255 - 1 == 0, i.e. no gap across
-        // 255 -> 0. A duplicate (seq == last) would give 255 here, so it is excluded above.
-        const auto missing = static_cast<std::uint8_t>(seq - it->second - 1);
-        lost_ += missing;
+    if (seq == it->second) {
+        return;  // duplicate: received, no loss
     }
+    // Distance forward from the newest seq, in 8-bit arithmetic: 0 - 255 == 1 across the wrap.
+    const auto ahead = static_cast<std::uint8_t>(seq - it->second);
+    if (ahead >= 128) {
+        // Behind the newest frame: a late (reordered) frame. It was counted as missing when
+        // the newer frame skipped over it, so take that back. last_seq stays at the newest.
+        ++reordered_;
+        if (lost_ > 0) {
+            --lost_;
+        }
+        return;
+    }
+    lost_ += static_cast<std::uint8_t>(ahead - 1);  // frames skipped between last and seq
     it->second = seq;
 }
 
 std::uint64_t LinkStats::received() const { return received_; }
 
 std::uint64_t LinkStats::lost() const { return lost_; }
+
+std::uint64_t LinkStats::reordered() const { return reordered_; }
 
 double LinkStats::loss_ratio() const {
     const std::uint64_t total = received_ + lost_;

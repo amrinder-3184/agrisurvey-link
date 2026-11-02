@@ -1,0 +1,36 @@
+t_mono_ns,t_s,event,detail
+616211715765,0.8,mode,Hold
+616211733165,0.8,armed,no
+616211734965,0.8,landed_state,Unknown
+616211735965,0.8,gps_fix,No Gps
+616767723909,1.3,command,arm
+616779441410,1.3,command,takeoff
+616787480910,1.3,landed_state,On Ground
+616787496610,1.3,gps_fix,Fix 3D
+616787502810,1.3,battery,>= 100 %
+617287618950,1.8,mode,Takeoff
+617287637250,1.8,armed,yes
+617287639050,1.8,global_position,ok
+617287640050,1.8,local_position,ok
+617287640950,1.8,home_position,ok
+617287642650,1.8,mission_item,0/16
+618287826057,2.8,battery,>= 90 %
+619288072174,3.8,landed_state,Taking Off
+624290135657,8.8,battery,>= 80 %
+630292178692,14.8,battery,>= 70 %
+636294495259,20.8,battery,>= 60 %
+637295012830,21.8,command,start_mission
+638299849300,22.8,mode,Mission
+638299865600,22.8,landed_state,In Air
+642300958859,26.8,battery,>= 50 %
+649303243942,33.8,mission_item,1/16
+674311455058,58.9,mission_item,2/16
+677312274802,61.9,mission_item,3/16
+703320402109,87.9,mission_item,4/16
+706321686471,90.9,mission_item,5/16
+719325622262,103.9,mode,Hold
+722326533348,106.9,failsafe,aborted by autopilot (mode Hold at item 5/16)
+724326988193,108.9,mode,Return To Launch
+745332983934,129.9,landed_state,Landing
+772341084576,156.9,landed_state,On Ground
+772341122376,156.9,outcome,"aborted by autopilot (mode Hold at item 5/16), landed (exit 6)"
